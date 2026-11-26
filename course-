@@ -1,0 +1,89 @@
+// Passing score percentage required to unlock the next module (e.g., 80 = 12 out of 15)
+const PASSING_PERCENTAGE = 80;
+
+const COURSE_MODULES = [
+  {
+    id: 1,
+    title: "Module 1: Market Structure & Key Levels",
+    summary: "Identify pre-market highs/lows, session liquidity zones, and trend shifts.",
+    lessonContent: `
+      <p>Market structure is the foundation of intraday price action. Before taking any trade, map out the prior day high, prior day low, and pre-market range.</p>
+      <p>An uptrend is defined by higher highs and higher lows; a downtrend is defined by lower highs and lower lows. Wait for price to reach a key level before looking for an entry.</p>
+    `,
+    // Add up to 15 questions per module using this exact object format
+    quiz: [
+      {
+        question: "What defines an intraday uptrend in market structure?",
+        options: [
+          "Lower highs and lower lows",
+          "Higher highs and higher lows",
+          "Flat consolidation inside pre-market range",
+          "High volume with no price movement"
+        ],
+        answerIndex: 1
+      },
+      {
+        question: "Which levels should be mapped before the market opens?",
+        options: [
+          "Only the 1-minute moving average",
+          "Prior day high/low and pre-market range",
+          "Last year's closing price only",
+          "Random round numbers"
+        ],
+        answerIndex: 1
+      },
+      {
+        question: "Where should you look for trade setups?",
+        options: [
+          "In the middle of a range with no catalyst",
+          "At key liquidity and support/resistance levels",
+          "Immediately after a large missed move",
+          "Whenever any green candle closes"
+        ],
+        answerIndex: 1
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Module 2: Risk Management & Position Sizing",
+    summary: "Calculate exact position size based on stop-loss distance and fixed account risk.",
+    lessonContent: `
+      <p>Never decide position size arbitrarily. First define your invalidation point (stop-loss), then calculate share or contract size so a loss never exceeds your fixed risk cap (for example, 1% of your account).</p>
+      <p>Formula: Position Size = Dollar Risk Allowed ÷ Stop-Loss Distance per Share.</p>
+    `,
+    quiz: [
+      {
+        question: "What must you determine BEFORE calculating your position size?",
+        options: [
+          "Your profit target",
+          "Your stop-loss (invalidation) distance",
+          "How confident you feel",
+          "Yesterday's P&L"
+        ],
+        answerIndex: 1
+      },
+      {
+        question: "If your max dollar risk is $100 and your stop-loss is $0.50 away, how many shares can you buy?",
+        options: [
+          "50 shares",
+          "100 shares",
+          "200 shares",
+          "500 shares"
+        ],
+        answerIndex: 2
+      },
+      {
+        question: "Why use fixed fractional risk per trade?",
+        options: [
+          "It guarantees every trade wins",
+          "It prevents a single losing streak from blowing up your account",
+          "It removes the need for stop-losses",
+          "It doubles your leverage automatically"
+        ],
+        answerIndex: 1
+      }
+    ]
+  }
+  // Copy and paste the block above for Modules 3 through 50
+];

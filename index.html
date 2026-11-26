@@ -3,13 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day Trading Soldier | Trading Course</title>
+  <title>Day Trading Soldier | 50-Module Course</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: #0b1120;
@@ -22,69 +18,121 @@
       padding: 20px;
       text-align: center;
     }
-    header h1 {
-      color: #38bdf8;
-      font-size: 2rem;
-      letter-spacing: 0.5px;
+    header h1 { color: #38bdf8; font-size: 1.9rem; }
+    header p { color: #94a3b8; margin-top: 4px; }
+    .progress-bar-wrap {
+      max-width: 860px;
+      margin: 20px auto 0;
+      padding: 0 20px;
     }
-    header p {
-      color: #94a3b8;
-      margin-top: 6px;
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+    }
+    .progress-track {
+      background: #1e293b;
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      background: #22c55e;
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
     }
     main {
       max-width: 860px;
-      margin: 40px auto;
+      margin: 28px auto;
       padding: 0 20px;
-    }
-    .hero {
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 32px;
-      margin-bottom: 32px;
-    }
-    .hero h2 {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-      color: #ffffff;
-    }
-    .hero p {
-      color: #cbd5e1;
-      margin-bottom: 20px;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #38bdf8;
-      color: #0b1120;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-    }
-    .btn:hover {
-      background-color: #7dd3fc;
-    }
-    .section-title {
-      font-size: 1.35rem;
-      margin-bottom: 16px;
-      color: #e2e8f0;
     }
     .module-card {
       background: #1e293b;
       border: 1px solid #334155;
       border-radius: 10px;
       padding: 20px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
     }
-    .module-card h3 {
-      color: #38bdf8;
-      font-size: 1.15rem;
+    .module-card.locked {
+      opacity: 0.55;
+    }
+    .module-card h3 { color: #38bdf8; font-size: 1.1rem; margin-bottom: 4px; }
+    .module-card.locked h3 { color: #94a3b8; }
+    .module-card p { color: #cbd5e1; font-size: 0.92rem; }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
       margin-bottom: 6px;
     }
-    .module-card p {
-      color: #cbd5e1;
-      font-size: 0.95rem;
+    .badge-passed { background: #14532d; color: #86efac; }
+    .badge-unlocked { background: #0c4a6e; color: #7dd3fc; }
+    .badge-locked { background: #334155; color: #94a3b8; }
+    .btn {
+      background: #38bdf8;
+      color: #0b1120;
+      border: none;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
     }
+    .btn:hover:not(:disabled) { background: #7dd3fc; }
+    .btn:disabled {
+      background: #334155;
+      color: #94a3b8;
+      cursor: not-allowed;
+    }
+    .btn-secondary {
+      background: #334155;
+      color: #f1f5f9;
+      margin-bottom: 20px;
+    }
+    .lesson-box, .quiz-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .lesson-box h2, .quiz-box h2 { color: #38bdf8; margin-bottom: 12px; }
+    .lesson-box p { margin-bottom: 12px; color: #e2e8f0; }
+    .question-block {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #334155;
+    }
+    .question-block p { font-weight: 600; margin-bottom: 10px; }
+    .option-label {
+      display: block;
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .option-label:hover { border-color: #38bdf8; }
+    .option-label input { margin-right: 10px; }
+    .result-banner {
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+      font-weight: 600;
+    }
+    .result-pass { background: #14532d; color: #86efac; border: 1px solid #22c55e; }
+    .result-fail { background: #450a0a; color: #fca5a5; border: 1px solid #ef4444; }
+    .hidden { display: none; }
     footer {
       max-width: 860px;
       margin: 48px auto 32px;
@@ -99,44 +147,175 @@
 
   <header>
     <h1>Day Trading Soldier</h1>
-    <p>Disciplined Market Structure, Risk Management &amp; Execution</p>
+    <p>Pass each module quiz to unlock the next lesson</p>
   </header>
 
+  <div class="progress-bar-wrap">
+    <div class="progress-label">
+      <span>Course Progress</span>
+      <span id="progress-text">0 / 0 Modules Passed</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
   <main>
-    <section class="hero">
-      <h2>Build a Repeatable Day Trading Process</h2>
-      <p>Learn how to read intraday price action, manage downside risk before every entry, and execute with discipline across live market sessions.</p>
-      <a href="#curriculum" class="btn">Explore Curriculum</a>
-    </section>
+    <!-- Dashboard View -->
+    <section id="dashboard-view"></section>
 
-    <section id="curriculum">
-      <h2 class="section-title">Course Curriculum</h2>
-
-      <div class="module-card">
-        <h3>Module 1: Market Structure &amp; Key Levels</h3>
-        <p>Identify pre-market highs/lows, session liquidity zones, trend shifts, and high-probability areas of interest.</p>
-      </div>
-
-      <div class="module-card">
-        <h3>Module 2: Risk Management &amp; Position Sizing</h3>
-        <p>Calculate exact share or contract size based on stop-loss distance, fixed account risk rules, and asymmetric R:R targets.</p>
-      </div>
-
-      <div class="module-card">
-        <h3>Module 3: Entry Triggers &amp; Trade Management</h3>
-        <p>Execute confirmations at key levels, manage active positions without emotional interference, and scale out systematically.</p>
-      </div>
-
-      <div class="module-card">
-        <h3>Module 4: Journaling &amp; Psychology</h3>
-        <p>Track trade metrics, review session recordings, and eliminate FOMO, revenge trading, and over-leveraging.</p>
-      </div>
+    <!-- Active Lesson & Quiz View -->
+    <section id="module-view" class="hidden">
+      <button class="btn btn-secondary" onclick="showDashboard()">← Back to All Modules</button>
+      <div class="lesson-box" id="lesson-container"></div>
+      <div class="quiz-box" id="quiz-container"></div>
     </section>
   </main>
 
   <footer>
-    <p><strong>Risk Disclaimer:</strong> All materials on Day Trading Soldier are provided strictly for educational and informational purposes and do not constitute financial, investment, or trading advice. Day trading involves substantial risk of loss and is not suitable for every investor.</p>
+    <p><strong>Risk Disclaimer:</strong> Educational content only. Not financial advice. Day trading carries substantial risk of loss.</p>
   </footer>
 
+  <script src="course-data.js"></script>
+  <script>
+    const STORAGE_KEY = "dts_passed_modules";
+
+    function getPassedModules() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    }
+
+    function markModulePassed(moduleId) {
+      const passed = getPassedModules();
+      if (!passed.includes(moduleId)) {
+        passed.push(moduleId);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(passed));
+      }
+    }
+
+    function isModuleUnlocked(index, passedList) {
+      if (index === 0) return true; // Module 1 is always unlocked
+      const previousModuleId = COURSE_MODULES[index - 1].id;
+      return passedList.includes(previousModuleId);
+    }
+
+    function updateProgressBar() {
+      const passed = getPassedModules();
+      const total = COURSE_MODULES.length;
+      const pct = total > 0 ? Math.round((passed.length / total) * 100) : 0;
+      document.getElementById("progress-text").textContent = `${passed.length} / ${total} Modules Passed (${pct}%)`;
+      document.getElementById("progress-fill").style.width = `${pct}%`;
+    }
+
+    function showDashboard() {
+      document.getElementById("module-view").classList.add("hidden");
+      const dashboard = document.getElementById("dashboard-view");
+      dashboard.classList.remove("hidden");
+      dashboard.innerHTML = "";
+
+      const passed = getPassedModules();
+      updateProgressBar();
+
+      COURSE_MODULES.forEach((mod, index) => {
+        const unlocked = isModuleUnlocked(index, passed);
+        const isPassed = passed.includes(mod.id);
+
+        let badgeHtml = `<span class="badge badge-locked">Locked</span>`;
+        if (isPassed) badgeHtml = `<span class="badge badge-passed">Passed</span>`;
+        else if (unlocked) badgeHtml = `<span class="badge badge-unlocked">Unlocked</span>`;
+
+        const card = document.createElement("div");
+        card.className = `module-card ${unlocked ? "" : "locked"}`;
+        card.innerHTML = `
+          <div>
+            ${badgeHtml}
+            <h3>${mod.title}</h3>
+            <p>${mod.summary}</p>
+          </div>
+          <button class="btn" ${unlocked ? "" : "disabled"} onclick="openModule(${index})">
+            ${unlocked ? (isPassed ? "Review" : "Start Module") : "Locked"}
+          </button>
+        `;
+        dashboard.appendChild(card);
+      });
+    }
+
+    function openModule(index) {
+      const mod = COURSE_MODULES[index];
+      document.getElementById("dashboard-view").classList.add("hidden");
+      document.getElementById("module-view").classList.remove("hidden");
+
+      document.getElementById("lesson-container").innerHTML = `
+        <h2>${mod.title}</h2>
+        ${mod.lessonContent}
+      `;
+
+      let quizHtml = `
+        <h2>Module ${mod.id} Quiz (${mod.quiz.length} Questions — ${PASSING_PERCENTAGE}% to Pass)</h2>
+        <form id="quiz-form">
+      `;
+
+      mod.quiz.forEach((q, qIndex) => {
+        quizHtml += `<div class="question-block"><p>${qIndex + 1}. ${q.question}</p>`;
+        q.options.forEach((opt, oIndex) => {
+          quizHtml += `
+            <label class="option-label">
+              <input type="radio" name="q${qIndex}" value="${oIndex}" required>
+              ${opt}
+            </label>
+          `;
+        });
+        quizHtml += `</div>`;
+      });
+
+      quizHtml += `
+          <button type="submit" class="btn">Submit Quiz</button>
+        </form>
+        <div id="quiz-result"></div>
+      `;
+
+      document.getElementById("quiz-container").innerHTML = quizHtml;
+
+      document.getElementById("quiz-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        gradeQuiz(index);
+      });
+    }
+
+    function gradeQuiz(index) {
+      const mod = COURSE_MODULES[index];
+      let correctCount = 0;
+
+      mod.quiz.forEach((q, qIndex) => {
+        const selected = document.querySelector(`input[name="q${qIndex}"]:checked`);
+        if (selected && Number(selected.value) === q.answerIndex) {
+          correctCount++;
+        }
+      });
+
+      const scorePct = Math.round((correctCount / mod.quiz.length) * 100);
+      const passed = scorePct >= PASSING_PERCENTAGE;
+      const resultBox = document.getElementById("quiz-result");
+
+      if (passed) {
+        markModulePassed(mod.id);
+        updateProgressBar();
+        const hasNext = index + 1 < COURSE_MODULES.length;
+        resultBox.innerHTML = `
+          <div class="result-banner result-pass">
+            You scored ${correctCount}/${mod.quiz.length} (${scorePct}%). Module passed!
+            ${hasNext ? `<br><br><button class="btn" onclick="openModule(${index + 1})">Continue to Next Module →</button>` : "<br><br>Congratulations! You completed all available modules."}
+          </div>
+        `;
+      } else {
+        resultBox.innerHTML = `
+          <div class="result-banner result-fail">
+            You scored ${correctCount}/${mod.quiz.length} (${scorePct}%). You need at least ${PASSING_PERCENTAGE}% to unlock the next module. Review the lesson and try again!
+          </div>
+        `;
+      }
+    }
+
+    showDashboard();
+  </script>
 </body>
 </html>
